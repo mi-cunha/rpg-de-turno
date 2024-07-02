@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Personagem {
     private String nome;
@@ -99,14 +100,22 @@ public class Personagem {
     }
 
     public void defender() {
+        System.out.println(this.nome + " está se defendendo.");
     }
 
-    public void fugir() {
+    public boolean tentarFugir() {
         System.out.println(this.nome + " tentou fugir e está vulnerável!");
         this.vulnerabilidade = true;
+
+        Random rand = new Random();
+        return rand.nextBoolean(); // 50% de chance de sucesso
     }
 
     public boolean estaVivo() {
         return this.pontosVida > 0;
+    }
+
+    public void usarHabilidade() {
+        System.out.println(this.nome + " não possui uma habilidade especial.");
     }
 }

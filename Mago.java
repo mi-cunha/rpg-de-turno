@@ -24,7 +24,9 @@ public class Mago extends Personagem {
                 danoMagico = 0;
             }
             this.inteligencia -= 10;
+            System.out.println(this.getNome() + " lançou magia!");
             return danoMagico;
+            
         } else {
             System.out.println(this.getNome() + " não tem pontos de magia suficientes!");
             return 0;
